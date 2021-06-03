@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ControllerMostradoClientes</servlet-name>
+  	<display-name>ControllerMostradoClientes</display-name>
+  	<description></description>
+  	<servlet-class>com.clariel.Controladores.ControllerMostradoClientes</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ControllerMostradoClientes</servlet-name>
+  	<url-pattern>/ControllerMostradoClientes</url-pattern>
+  </servlet-mapping>
 </web-app>

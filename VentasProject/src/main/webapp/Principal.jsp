@@ -30,6 +30,7 @@ $(document).ready(function(){
 			tabla.innerHTML += `
 			
 			<tr>
+				<td>${item.idCliente}</td>}
 				<td>${item.nombre_cliente}</td>}
 				<td>${item.apellido_cliente}</td>
 				<td>${item.direccion}</td>
@@ -37,8 +38,10 @@ $(document).ready(function(){
 				<td>${item.dui}</td>
 				<td>${item.nit}</td>
 				<td>${item.nrc}</td>
+				<td> <a href="ControllerMostrarProductos?clien=${item.idCliente}" class="btn btn-danger">ELIMINAR <a></td>
+				
 			</tr>
-			<td> <a href="http://www.google.com" class="btn btn-success">GOOGLE <a></td>
+			
 			`
 			console.log(item.nombre_cliente);
 		}
@@ -49,8 +52,11 @@ $(document).ready(function(){
 
 </script>
 
+
+
 <table class="table table-dark table-striped" id="tablaDatos">
 <thead>
+<th>ID</th>
 <th>NOMBRES</th>
 <th>APELLIDOS</th>
 <th>DIRECCION</th>
@@ -58,6 +64,7 @@ $(document).ready(function(){
 <th>DUI</th>
 <th>NIT</th>
 <th>NRC</th>
+<th>ACCION</th>
 </thead>
 <tbody>
 
