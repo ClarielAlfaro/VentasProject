@@ -15,9 +15,7 @@ box-sizing: border-box;
 }
 
 body{
-background-image: url(C:\Users\alfar\Desktop\menu bar\background.jpg);
-background-size: cover;
-background-position: center;
+background-color:#b0e0e6; 
 font-family: sans-serif;
 }
 
@@ -69,8 +67,34 @@ display:block;
 margin:10px;
 }
 
+form{
+background-color:white;
+border-radius: 3px;
+font-size:1.2em;
+color: black;
+padding: 10px;
+margin: 0 auto;
+width:300px;
+}
 
+.box{
+width:600px;
+padding: 40px;
+position: absolute;
+top:55%;
+left:50%;
+transform: translate(-50%,-50%);
+text-align: center;
+}
 
+.box input[type="text"]{
+width:500px;
+padding: 5px;
+}
+
+.box p{
+margin-left:-385px;
+}
 
 </style>
 
@@ -155,32 +179,32 @@ if (Id==null){
 %>
 
 
-<form action="ControllerMostrarProductos" method="get">
+<form  class ="box" action="ControllerMostrarProductos" method="get">
 
 <input type="hidden" value=<%=Id%> name="IdCliente"  >
 
-<label>Nombre</label>
-<input type="text" value="<%=Nombre%>" name="Cliente">
+<p>Nombre Cliente:</p>
+<input type="text" value="<%=Nombre%>" name="Cliente" required pattern="[a-zA-Z]+"> <br/>
 
-<label>Apellido</label>
-<input type="text" value="<%=Apellido%>" name="Apellido">
+<p>Apellido Cliente:</p>
+<input type="text" value="<%=Apellido%>" name="Apellido" required pattern="[a-zA-Z]+"> <br/>
 
-<label>Direccion</label>
-<input type="text" value="<%=Direccion%>" name="Direccion">
+<p>Direccion:</p>
+<input type="text" value="<%=Direccion%>" name="Direccion" required pattern="[a-zA-Z]+"> <br/>
 
-<label>Telefono</label>
-<input type="text" value="<%=Telefono%>" name="Telefono">
+<p>Telefono:</p>
+<input maxlength="8" minlength="8" type="text" value="<%=Telefono%>" name="Telefono" required pattern="[0-9]+"> <br/>
 
-<label>DUI</label>
-<input type="text" value="<%=DUI%>" name="DUI">
+<p>DUI:</p>
+<input maxlength="9" minlength="9" type="text" value="<%=DUI%>" name="DUI" required pattern="[a-zA-Z]+"> <br/>
 
-<label>NIT</label>
-<input type="text" value="<%=NIT%>" name="NIT">
+<p>NIT:</p>
+<input maxlength="14" minlength="14" type="text" value="<%=NIT%>" name="NIT" required pattern="[a-zA-Z]+"> <br/>
 
-<label>NRC</label>
-<input type="text" value="<%=NRC%>" name="NRC">
-
-<button name="Guardar" value="btna">Guardar</button>
+<p>NRC:</p>
+<input maxlength="7" minlength="7" type="text" value="<%=NRC%>" name="NRC" required pattern="[a-zA-Z]+"> <br/>
+<br/>
+<button name="Guardar" value="btna" class="btn btn-success">Guardar</button>
 
 </form>
 

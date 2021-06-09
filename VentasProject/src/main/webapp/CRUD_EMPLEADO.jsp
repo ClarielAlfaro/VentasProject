@@ -7,6 +7,44 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<style>
+
+body{
+background-color:#b0e0e6; 
+font-family: sans-serif;
+}
+
+form{
+	background-color:white;
+	border-radius: 3px;
+	font-size:1.2em;
+	color: black;
+	padding: 10px;
+	margin: 0 auto;
+	width:300px;
+	}
+
+	.box{
+	width:600px;
+	padding: 40px;
+	position: absolute;
+	top:57%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	}
+
+	.box input[type="text"]{
+	width:500px;
+	padding: 5px;
+	}
+
+	.box p{
+	margin-left:-385px;
+	}
+
+</style>
+
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
@@ -33,26 +71,26 @@ if (Id==null){
 %>
 
 
-<form action="ControllerCRUDempleado" method="get">
+<form class ="box" action="ControllerCRUDempleado" method="get">
 
 <input type="hidden" value=<%=Id%> name="IdEmpleado"  >
 
-<label>Id Cargo</label>
-<input type="text" value="<%=IdC%>" name="IdC">
+<p>Id Cargo:</p>
+<input type="text" value="<%=IdC%>" name="IdC" required ><br/>
 
-<label>Nombre</label>
-<input type="text" value="<%=Nombre%>" name="Empleado">
+<p>Nombre:</p>
+<input type="text" value="<%=Nombre%>" name="Empleado" required pattern="[a-zA-Z]+"><br/>
 
-<label>Apellido</label>
-<input type="text" value="<%=Apellido%>" name="Apellido">
+<p>Apellido:</p>
+<input type="text" value="<%=Apellido%>" name="Apellido" required pattern="[a-zA-Z]+"><br/>
 
-<label>Usuario</label>
-<input type="text" value="<%=Usuario%>" name="Usuario">
+<p>Usuario:</p>
+<input type="text" value="<%=Usuario%>" name="Usuario" required pattern="[a-zA-Z]+"><br/>
 
-<label>Contrasenia</label>
-<input type="text" value="<%=Contrasenia%>" name="Contrasenia">
-
-<button name="Guardar" value="btna">Guardar</button>
+<p>Contraseña:</p>
+<input maxlength="8" minlength="3" type="text" value="<%=Contrasenia%>" name="Contrasenia" required><br/>
+<br/>
+<button name="Guardar" value="btna" class="btn btn-success">Guardar</button>
 
 </form>
 
