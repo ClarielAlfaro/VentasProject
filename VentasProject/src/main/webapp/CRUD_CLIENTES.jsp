@@ -196,13 +196,13 @@ if (Id==null){
 <input maxlength="8" minlength="8" type="text" value="<%=Telefono%>" name="Telefono" required pattern="[0-9]+"> <br/>
 
 <p>DUI:</p>
-<input maxlength="9" minlength="9" type="text" value="<%=DUI%>" name="DUI" required pattern="[a-zA-Z]+"> <br/>
+<input maxlength="9" minlength="9" type="text" value="<%=DUI%>" name="DUI" required pattern="[0-9]+"> <br/>
 
 <p>NIT:</p>
-<input maxlength="14" minlength="14" type="text" value="<%=NIT%>" name="NIT" required pattern="[a-zA-Z]+"> <br/>
+<input maxlength="14" minlength="14" type="text" value="<%=NIT%>" name="NIT" required pattern="[0-9]+"> <br/>
 
 <p>NRC:</p>
-<input maxlength="7" minlength="7" type="text" value="<%=NRC%>" name="NRC" required pattern="[a-zA-Z]+"> <br/>
+<input maxlength="7" minlength="7" type="text" value="<%=NRC%>" name="NRC" required pattern="[0-9]+"> <br/>
 <br/>
 <button name="Guardar" value="btna" class="btn btn-success">Guardar</button>
 
