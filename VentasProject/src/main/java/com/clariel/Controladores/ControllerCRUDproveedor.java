@@ -2,26 +2,24 @@ package com.clariel.Controladores;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.clariel.DAO.Clscliente;
-import com.clariel.entidades.Cliente;
+import com.clariel.DAO.ClsProveedor;
+import com.clariel.entidades.Proveedor;
 import com.google.gson.Gson;
 
 /**
- * Servlet implementation class ControllerMostrarProductos
+ * Servlet implementation class ControllerCRUDproveedor
  */
-@WebServlet("/ControllerMostrarProductos")
-public class ControllerMostrarProductos extends HttpServlet {
+public class ControllerCRUDproveedor extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ControllerMostrarProductos() {
+    public ControllerCRUDproveedor() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,51 +35,44 @@ public class ControllerMostrarProductos extends HttpServlet {
 		
 		
 		String agregando = request.getParameter("Guardar");
-		String IdCliente = request.getParameter("IdCliente");		
-		String Nombre = request.getParameter("Cliente");
-		String Apellido = request.getParameter("Apellido");
+		String IdProveedor = request.getParameter("IdProveedor");		
+		String Nombre = request.getParameter("Proveedor");		
 		String Direccion = request.getParameter("Direccion");
-		String Telefono = request.getParameter("Telefono");
-		String DUI = request.getParameter("DUI");
-		String NIT = request.getParameter("NIT");
-		String NRC = request.getParameter("NRC");
+		String Telefono = request.getParameter("Telefono");		
 		//Esto viene del jsp CRUD_CLIENTES
 		
-		Clscliente clsclie = new Clscliente();
-		Cliente clien = new Cliente();
+		ClsProveedor clspro = new ClsProveedor();
+		Proveedor pro = new Proveedor();
 		
 		if(evaluar!=null) {
 			
 			if(evaluar.equals("btne")) {				
 				
-				clien.setIdCliente(Integer.parseInt(IdCliente));
-				clsclie.Eliminar(clien);
-				response.sendRedirect("Principal.jsp");
+				pro.setIdProveedor(Integer.parseInt(IdProveedor));
+				clspro.Eliminar(pro);
+				response.sendRedirect("Listadoproveedores.jsp");
 			}
 			
 		} else if(agregando.equals("btna")) {
 			
-			clien.setNombreCliente(Nombre);
-			clien.setApellidoCliente(Apellido);
-			clien.setDireccion(Direccion);
-			clien.setTelefono(Telefono);
-			clien.setDui(DUI);
-			clien.setNit(NIT);
-			clien.setNrc(NRC);
+			pro.setNombreProveedor(Nombre);			
+			pro.setDireccion(Direccion);
+			pro.setTelefono(Telefono);			
 		
 			//System.out.println(IdCliente);
 			
-			if(IdCliente=="" ||IdCliente==null) {				
-				clsclie.Guardar(clien);
-				response.sendRedirect("Principal.jsp");
+			if(IdProveedor=="" ||IdProveedor==null) {				
+				clspro.Guardar(pro);
+				response.sendRedirect("Listadoproveedores.jsp");
 			}
 			else {
-				clien.setIdCliente(Integer.parseInt(IdCliente));
-				clsclie.Actualizar(clien);
-				response.sendRedirect("Principal.jsp");
+				pro.setIdProveedor(Integer.parseInt(IdProveedor));
+				clspro.Actualizar(pro);
+				response.sendRedirect("Listadoproveedores.jsp");
 			}
 			
 		}
+		
 		
 		
 		
@@ -96,8 +87,9 @@ public class ControllerMostrarProductos extends HttpServlet {
 		
 		Gson json = new Gson();
 
-		Clscliente clsClien = new Clscliente();
-		response.getWriter().append(json.toJson(clsClien.ListadoClientes()));
+		ClsProveedor clsPro = new ClsProveedor();
+		response.getWriter().append(json.toJson(clsPro.ListadoProveedores()));
+		
 	}
 
 }

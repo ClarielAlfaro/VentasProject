@@ -2,8 +2,6 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <head>
 <link rel="stylesheet" href="style.css">
@@ -76,59 +74,14 @@ margin:10px;
 
 </style>
 
-
 <meta charset="ISO-8859-1">
-<title>Clientes</title>
+<title>Insert title here</title>
 </head>
 <body>
-<script type="text/javascript">
-
-$(document).ready(function(){
-	
-	$.post('ControllerMostrarProductos',{
-		//Esta seccion es para enviar peticiones al servidor
-		
-	}, function(response){
-		//Esta seccion es para recibir informacion
-		
-		let datos = JSON.parse(response);		
-		console.log(datos);
-		
-		var tabla = document.getElementById('tablaDatos');
-		
-		for (let item of datos){
-			
-			tabla.innerHTML += `
-			
-			<tr>				
-				<td>${item.nombre_cliente}</td>
-				<td>${item.apellido_cliente}</td>
-				<td>${item.direccion}</td>
-				<td>${item.telefono}</td>
-				<td>${item.dui}</td>
-				<td>${item.nit}</td>
-				<td>${item.nrc}</td>
-				<td> <a href="ControllerMostrarProductos?IdCliente=${item.idCliente}&Eliminar=btne" class="btn btn-danger">ELIMINAR <a>
-				<a href="CRUD_CLIENTES.jsp?Id=${item.idCliente}&Nombre=${item.nombre_cliente}&Apellido=${item.apellido_cliente}&Direccion=${item.direccion}&Telefono=${item.telefono}&DUI=${item.dui}&NIT=${item.nit}&NRC=${item.nrc}" class="btn btn-warning">EDITAR <a>
-				</td>
-				
-			</tr>
-			
-			`
-			console.log(item.nombre_cliente);
-		}
-		
-	})
-})
-
-
-</script>
-
-
 
 <div class="menu-bar">
 <ul>
-<li class="active"><a href="#"><i class="fa fa-user" aria-hidden="true"></i>  Clientes</a>
+<li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i>  Clientes</a>
 <div class="sub-menu-1">
 <ul>
 <li><a href="Principal.jsp" class="btn btn-success">Buscar Cliente</a></li>
@@ -136,7 +89,7 @@ $(document).ready(function(){
 </ul>
 </div>
 </li>
-<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Proveedores</a>
+<li><a href="#"><i class="fa fa-book" aria-hidden="true"></i>Proveedores</a>
 <div class="sub-menu-1">
 <ul>
 <li><a href="#"></a>Buscar Proveedores</li>
@@ -159,13 +112,12 @@ $(document).ready(function(){
 </ul>
 </div>
 </li>
-<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Empleados</a>
+<li><a href="#"><i class="fa fa-book" aria-hidden="true"></i>Empleados</a>
 <div class="sub-menu-1">
 <ul>
 <li><a href="#"></a>Buscar Empleados</li>
 <li><a href="#"></a>Agregar y Modificar</li>
-<li><a href="ListaCargos.jsp" class="btn btn-success">cargos</a></li>
-<li><a href="CRUD_CARGOS.jsp" class="btn btn-success">Modificar cargos</a></li>
+<li><a href="#"></a>cargos</li>
 </ul>
 </div>
 </li>
@@ -179,25 +131,59 @@ $(document).ready(function(){
 </ul>
 </div>
 
-<table class="table table-success table-striped" id="tablaDatos">
-<thead>
+<%
+String Id= request.getParameter("Id");
+String Nombre= request.getParameter("Nombre");
+String Apellido= request.getParameter("Apellido");
+String Direccion= request.getParameter("Direccion");
+String Telefono= request.getParameter("Telefono");
+String DUI= request.getParameter("DUI");
+String NIT= request.getParameter("NIT");
+String NRC= request.getParameter("NRC");
 
-<th>NOMBRES</th>
-<th>APELLIDOS</th>
-<th>DIRECCION</th>
-<th>TELEFONO</th>
-<th>DUI</th>
-<th>NIT</th>
-<th>NRC</th>
-<th>ACCION</th>
-</thead>
-<tbody>
+if (Id==null){
+	
+	Id = "";
+	Nombre = "";
+	Apellido = "";
+	Direccion = "";
+	Telefono = "";
+	DUI = "";
+	NIT = "";
+	NRC = "";
+}
+%>
 
 
+<form action="ControllerMostrarProductos" method="get">
 
-</tbody>
+<input type="hidden" value=<%=Id%> name="IdCliente"  >
 
-</table>
+<label>Nombre</label>
+<input type="text" value="<%=Nombre%>" name="Cliente">
+
+<label>Apellido</label>
+<input type="text" value="<%=Apellido%>" name="Apellido">
+
+<label>Direccion</label>
+<input type="text" value="<%=Direccion%>" name="Direccion">
+
+<label>Telefono</label>
+<input type="text" value="<%=Telefono%>" name="Telefono">
+
+<label>DUI</label>
+<input type="text" value="<%=DUI%>" name="DUI">
+
+<label>NIT</label>
+<input type="text" value="<%=NIT%>" name="NIT">
+
+<label>NRC</label>
+<input type="text" value="<%=NRC%>" name="NRC">
+
+<button name="Guardar" value="btna">Guardar</button>
+
+</form>
+
 
 
 </body>

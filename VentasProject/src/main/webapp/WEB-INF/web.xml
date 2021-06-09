@@ -10,8 +10,56 @@
   	<description></description>
   	<servlet-class>com.clariel.Controladores.ControllerMostradoClientes</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ControllerMostrarProduct</servlet-name>
+  	<display-name>ControllerMostrarProduct</display-name>
+  	<description></description>
+  	<servlet-class>com.clariel.Controladores.ControllerMostrarProduct</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CRUD_CARGOS</servlet-name>
+  	<display-name>CRUD_CARGOS</display-name>
+  	<description></description>
+  	<servlet-class>com.clariel.Controladores.CRUD_CARGOS</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ControllerCRUDcargos</servlet-name>
+  	<display-name>ControllerCRUDcargos</display-name>
+  	<description></description>
+  	<servlet-class>com.clariel.Controladores.ControllerCRUDcargos</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ControllerCRUDcategoria</servlet-name>
+  	<display-name>ControllerCRUDcategoria</display-name>
+  	<description></description>
+  	<servlet-class>com.clariel.Controladores.ControllerCRUDcategoria</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ControllerCRUDempleado</servlet-name>
+  	<display-name>ControllerCRUDempleado</display-name>
+  	<description></description>
+  	<servlet-class>com.clariel.Controladores.ControllerCRUDempleado</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ControllerCRUDproveedor</servlet-name>
+  	<display-name>ControllerCRUDproveedor</display-name>
+  	<description></description>
+  	<servlet-class>com.clariel.Controladores.ControllerCRUDproveedor</servlet-class>
+  </servlet>
   <servlet-mapping>
-  	<servlet-name>ControllerMostradoClientes</servlet-name>
-  	<url-pattern>/ControllerMostradoClientes</url-pattern>
+  	<servlet-name>ControllerCRUDcargos</servlet-name>
+  	<url-pattern>/ControllerCRUDcargos</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControllerCRUDcategoria</servlet-name>
+  	<url-pattern>/ControllerCRUDcategoria</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControllerCRUDempleado</servlet-name>
+  	<url-pattern>/ControllerCRUDempleado</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControllerCRUDproveedor</servlet-name>
+  	<url-pattern>/ControllerCRUDproveedor</url-pattern>
   </servlet-mapping>
 </web-app>

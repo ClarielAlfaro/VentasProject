@@ -1,6 +1,6 @@
 package com.clariel.entidades;
 
-public class Categoria {
+public class Categoria  {
 	
 	protected int idCategoria;
 	protected String nombre_categoria;

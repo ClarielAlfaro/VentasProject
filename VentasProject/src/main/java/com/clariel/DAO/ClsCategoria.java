@@ -38,7 +38,7 @@ public class ClsCategoria {
 	public void Guardar (Categoria cat) {
 		
 		try {
-			CallableStatement consulta = con.prepareCall("call SP_I_Categoria(?,?)");			
+			CallableStatement consulta = con.prepareCall("call SP_I_Categoria(?)");			
 			consulta.setString("pnombrec", cat.getNombreCategoria());
 			consulta.executeQuery();
 			System.out.println("Exito");
@@ -64,7 +64,7 @@ public class ClsCategoria {
 		}
 	}
 
-	public void ActualizarUsuario(Categoria cat) {
+	public void Actualizar(Categoria cat) {
 
 		try {
 			CallableStatement consulta = con.prepareCall("call SP_U_Categoria(?,?)");

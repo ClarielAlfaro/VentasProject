@@ -13,7 +13,7 @@ public class ClsProveedor {
 	ConexionBd conexion = new ConexionBd();
 	Connection con = conexion.RetornarConexion();
 
-	public ArrayList<Proveedor> ListadoProductos() {
+	public ArrayList<Proveedor> ListadoProveedores() {
 		ArrayList<Proveedor> Lista = new ArrayList<>();
 
 		try {

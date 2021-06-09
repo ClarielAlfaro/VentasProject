@@ -122,7 +122,7 @@ public class ClsEmpleado {
 		}
 	}
 
-	public void ActualizarUsuario(Empleado cat) {
+	public void Actualizar(Empleado cat) {
 
 		try {
 			CallableStatement consulta = con.prepareCall("call SP_U_Empleado(?,?,?,?,?,?)");

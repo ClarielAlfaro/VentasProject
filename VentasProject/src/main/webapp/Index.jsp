@@ -12,7 +12,7 @@ body{
 margin:0;
 padding:0;
 font-family:sans-serif;
-background: #34495e; 
+background: #008080; 
 }
 
 .box{
@@ -22,7 +22,7 @@ position: absolute;
 top:50%;
 left:50%;
 transform: translate(-50%,-50%);
-background: #191919;
+background: #2f4f4f;
 text-align: center;
 }
 

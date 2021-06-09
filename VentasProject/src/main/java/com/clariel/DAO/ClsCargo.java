@@ -65,7 +65,7 @@ public class ClsCargo {
 		}
 	}
 
-	public void ActualizarUsuario(Cargo cat) {
+	public void Actualizar(Cargo cat) {
 
 		try {
 			CallableStatement consulta = con.prepareCall("call SP_U_Cargo(?,?,?)");

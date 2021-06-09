@@ -75,10 +75,10 @@ public class Clscliente {
 		}
 	}
 
-	public void ActualizarUsuario(Cliente cat) {
+	public void Actualizar(Cliente cat) {
 
 		try {
-			CallableStatement consulta = con.prepareCall("call SP_U_Cliente(?,?,?)");
+			CallableStatement consulta = con.prepareCall("call SP_U_Cliente(?,?,?,?,?,?,?,?)");
 			consulta.setInt("pid", cat.getIdCliente());
 			consulta.setString("pnombre", cat.getNombreCliente());
 			consulta.setString("papellido", cat.getApellidoCliente());
