@@ -31,12 +31,13 @@ public class ControllerCRUDcargos extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		String evaluar = request.getParameter("Eliminar");		
+		String evaluar = request.getParameter("Eliminar");
+		
 		
 		String agregando = request.getParameter("Guardar");
 		String IdCargo = request.getParameter("IdCargo");		
 		String Cargo = request.getParameter("Cargo");
-		double Sueldo = Double.parseDouble(request.getParameter("Sueldo")) ;		
+		String Sueldo = request.getParameter("Sueldo") ;		
 		//Esto viene del jsp CRUD_CLIENTES
 		
 		ClsCargo clscargo = new ClsCargo();
@@ -54,7 +55,7 @@ public class ControllerCRUDcargos extends HttpServlet {
 		} else if(agregando.equals("btna")) {
 			
 			cargo.setNombreCargo(Cargo);
-			cargo.setSueldo(Sueldo);		
+			cargo.setSueldo(Double.parseDouble(Sueldo) );		
 		
 			//System.out.println(IdCliente);
 			
@@ -80,10 +81,13 @@ public class ControllerCRUDcargos extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
+		String combo = request.getParameter("cargo");
+		System.out.println(combo);
 		
 		Gson json = new Gson();
 
 		ClsCargo clscargo = new ClsCargo();
+		
 		response.getWriter().append(json.toJson(clscargo.ListadoCargos()));
 		
 	}

@@ -6,7 +6,6 @@
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <head>
-<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 
@@ -72,8 +71,6 @@ margin:10px;
 }
 
 
-
-
 </style>
 
 
@@ -131,24 +128,25 @@ $(document).ready(function(){
 <li class="active"><a href="#"><i class="fa fa-user" aria-hidden="true"></i>  Clientes</a>
 <div class="sub-menu-1">
 <ul>
-<li><a href="Principal.jsp" class="btn btn-success">Buscar Cliente</a></li>
-<li><a  href="CRUD_CLIENTES.jsp" class="btn btn-success">Agregar y Modificar</a></li>
+<li><a href="Principal.jsp" class="btn btn-success">Mostrar Clientes</a></li>
+<li><a  href="CRUD_CLIENTES.jsp" class="btn btn-success">Agregar Clientes</a></li>
 </ul>
 </div>
 </li>
 <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Proveedores</a>
 <div class="sub-menu-1">
 <ul>
-<li><a href="#"></a>Buscar Proveedores</li>
-<li><a href="#"></a>Agregar y Modificar</li>
+<li><a href="Listadoproveedores.jsp" class="btn btn-success">Mostrar Proveedores</a></li>
+<li><a href="CRUD_PROVEEDORES.jsp" class="btn btn-success">Agregar Proveedores</a></li>
 </ul>
 </div>
 </li>
 <li><a href="#"><i class="fa fa-book" aria-hidden="true"></i>Productos</a>
 <div class="sub-menu-1">
 <ul>
-<li><a href="#" ></a>Agregar y Modificar</li>
-<li><a href="#"></a>Categorias</li>
+<li><a href="#" ></a>Agregar</li>
+<li><a href="ListaCategoria.jsp" class="btn btn-success">Categorias</a></li>
+<li><a href="CRUD_CATEGORIA.jsp" class="btn btn-success">Agregar Categorias</a></li>
 </ul>
 </div>
 </li>
@@ -162,10 +160,10 @@ $(document).ready(function(){
 <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Empleados</a>
 <div class="sub-menu-1">
 <ul>
-<li><a href="#"></a>Buscar Empleados</li>
-<li><a href="#"></a>Agregar y Modificar</li>
+<li><a href="ListaEmpleado.jsp" class="btn btn-success">Mostrar Empleados</a></li>
+<li><a href="CRUD_EMPLEADO.jsp" class="btn btn-success">Agregar Empleado</a></li>
 <li><a href="ListaCargos.jsp" class="btn btn-success">cargos</a></li>
-<li><a href="CRUD_CARGOS.jsp" class="btn btn-success">Modificar cargos</a></li>
+<li><a href="CRUD_CARGOS.jsp" class="btn btn-success">Agregar cargo</a></li>
 </ul>
 </div>
 </li>
@@ -178,6 +176,25 @@ $(document).ready(function(){
 </li>
 </ul>
 </div>
+
+<%
+HttpSession sesion = (HttpSession) request.getSession();
+String usuSession = String.valueOf(sesion.getAttribute("Usuario"));
+
+System.out.println(usuSession + "Nombre de Usuario");
+
+if(usuSession.equals(null) || usuSession.equals("null") ){
+	
+	response.sendRedirect("Index.jsp");
+}
+
+%>
+
+<form action="ControllerAcceso" method="post">
+
+<input type="submit" name="btncerrar" value="cerrar">
+
+</form>
 
 <table class="table table-success table-striped" id="tablaDatos">
 <thead>
@@ -198,6 +215,7 @@ $(document).ready(function(){
 </tbody>
 
 </table>
+
 
 
 </body>

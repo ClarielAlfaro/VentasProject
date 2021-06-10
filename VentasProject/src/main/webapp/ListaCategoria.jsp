@@ -52,6 +52,25 @@ $(document).ready(function(){
 
 </script>
 
+<%
+HttpSession sesion = (HttpSession) request.getSession();
+String usuSession = String.valueOf(sesion.getAttribute("Usuario"));
+
+System.out.println(usuSession + "Nombre de Usuario");
+
+if(usuSession.equals(null) || usuSession.equals("null") ){
+	
+	response.sendRedirect("Index.jsp");
+}
+
+%>
+
+<form action="ControllerAcceso" method="post">
+
+<input type="submit" name="btncerrar" value="cerrar">
+
+</form>
+
 <table class="table table-success table-striped" id="tablaDatos">
 <thead>
 
@@ -66,6 +85,8 @@ $(document).ready(function(){
 </tbody>
 
 </table>
+
+
 
 </body>
 </html>

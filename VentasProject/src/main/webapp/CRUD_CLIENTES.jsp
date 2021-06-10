@@ -22,18 +22,21 @@ font-family: sans-serif;
 .menu-bar{
 background: rgb(0,100,0);
 text-align: center;
+
 }
 
 .menu-bar ul{
 display:inline-flex;
 list-style:none;
 color: #fff;
+
 }
 
 .menu-bar ul li{
 width:200px;
 margin:15px;
 padding:15px;
+z-index:1;
 }
 
 .menu-bar ul li a{
@@ -75,6 +78,7 @@ color: black;
 padding: 10px;
 margin: 0 auto;
 width:300px;
+
 }
 
 .box{
@@ -85,6 +89,7 @@ top:55%;
 left:50%;
 transform: translate(-50%,-50%);
 text-align: center;
+
 }
 
 .box input[type="text"]{
@@ -176,6 +181,19 @@ if (Id==null){
 	NIT = "";
 	NRC = "";
 }
+%>
+
+<%
+HttpSession sesion = (HttpSession) request.getSession();
+String usuSession = String.valueOf(sesion.getAttribute("Usuario"));
+
+System.out.println(usuSession + "Nombre de Usuario");
+
+if(usuSession.equals(null) || usuSession.equals("null") ){
+	
+	response.sendRedirect("Index.jsp");
+}
+
 %>
 
 

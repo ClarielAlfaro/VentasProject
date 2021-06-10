@@ -62,6 +62,19 @@ if (Id==null){
 }
 %>
 
+<%
+HttpSession sesion = (HttpSession) request.getSession();
+String usuSession = String.valueOf(sesion.getAttribute("Usuario"));
+
+System.out.println(usuSession + "Nombre de Usuario");
+
+if(usuSession.equals(null) || usuSession.equals("null") ){
+	
+	response.sendRedirect("Index.jsp");
+}
+
+%>
+
 
 <form class ="box" action="ControllerCRUDcategoria" method="get">
 
@@ -73,6 +86,7 @@ if (Id==null){
 <button name="Guardar" value="btna" class="btn btn-success">Guardar</button>
 
 </form>
+
 
 
 </body>

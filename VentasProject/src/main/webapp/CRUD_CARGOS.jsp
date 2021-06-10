@@ -4,7 +4,7 @@
 <html>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <head>
-<link rel="stylesheet" href="style.css">
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
@@ -66,6 +66,18 @@ if (Id==null){
 }
 %>
 
+<%
+HttpSession sesion = (HttpSession) request.getSession();
+String usuSession = String.valueOf(sesion.getAttribute("Usuario"));
+
+System.out.println(usuSession + "Nombre de Usuario");
+
+if(usuSession.equals(null) || usuSession.equals("null") ){
+	
+	response.sendRedirect("Index.jsp");
+}
+
+%>
 
 <form class ="box" action="ControllerCRUDcargos" method="get">
 
@@ -81,6 +93,8 @@ if (Id==null){
 <button name="Guardar" value="btna" class="btn btn-success">Guardar</button>
 
 </form>
+
+
 
 </body>
 </html>

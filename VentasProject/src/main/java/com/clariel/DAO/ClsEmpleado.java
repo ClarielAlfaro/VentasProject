@@ -22,12 +22,13 @@ public class ClsEmpleado {
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
             	Empleado cat = new Empleado();
-                cat.setIdEmpledo(rs.getInt("idEmpleado"));
-                cat.setIdCargo(rs.getInt("id_cargo"));
+                cat.setIdEmpledo(rs.getInt("idEmpleado"));  
+                cat.setIdCargo(rs.getInt("id_cargo"));  
                 cat.setNombreEmpleado(rs.getString("nombre_empleado"));
                 cat.setApellidoEmpleado(rs.getString("apellido_empleado"));
                 cat.setUsuario(rs.getString("usuario"));
-                cat.setContrasenia(rs.getString("contrasenia"));               
+                cat.setContrasenia(rs.getString("contrasenia"));
+                           
                 
                 Lista.add(cat);
 			}
@@ -38,7 +39,7 @@ public class ClsEmpleado {
 		return Lista;
 	}
 	
-	public boolean LoguinUsuario(String Usuario, String PASS){
+	public int LoguinUsuario(String Usuario, String PASS){
         ArrayList <Empleado> ListaUsuarioPass = new ArrayList<>();
         
         try {
@@ -73,7 +74,7 @@ public class ClsEmpleado {
             }
                 
                 if (UsuarioBD.equals(Usuario) && ContraBD.equals(PASS)){
-                    return true;
+                    return 1;
                 }
                 con.close();
            
@@ -83,7 +84,7 @@ public class ClsEmpleado {
             System.out.println("Error" + e);
        }
         
-         return false;
+         return 0;
     
     
 } 

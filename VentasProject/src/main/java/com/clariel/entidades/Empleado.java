@@ -1,9 +1,9 @@
 package com.clariel.entidades;
 
-public class Empleado {
+public class Empleado{
 	
 	protected int idEmpleado;
-	protected int idCargo;
+	protected int id_cargo;
 	protected String nombre_empleado;
 	protected String apellido_empleado;
 	protected String usuario;
@@ -19,11 +19,11 @@ public class Empleado {
     }
     
     public int getIdCargo() {
-        return idCargo;
+        return id_cargo;
     }
 
     public void setIdCargo(int id_cargo) {
-        this.idCargo = id_cargo;
+        this.id_cargo = id_cargo;
     }
     
     public String getNombreEmpleado() {

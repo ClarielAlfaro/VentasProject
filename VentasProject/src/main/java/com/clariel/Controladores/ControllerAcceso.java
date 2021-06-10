@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.clariel.DAO.ClsEmpleado;
 
@@ -40,6 +41,17 @@ public class ControllerAcceso extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
+		HttpSession session = request.getSession(true);
+		
+		String btncerrar = request.getParameter("btncerrar");
+		
+		if(btncerrar!=null) {
+			
+			response.sendRedirect("Index.jsp");
+			session.invalidate();
+			
+		}else {		
+		
 		String user = request.getParameter("user");
 		String pass = request.getParameter("pass");
 		
@@ -50,12 +62,14 @@ public class ControllerAcceso extends HttpServlet {
 		var valordeacceso = clsEm.LoguinUsuario(user,pass);
 		
 		
-		if(valordeacceso == true) {
+		if(valordeacceso == 1) {
 			System.out.println("WELCOME");
 			response.sendRedirect("Principal.jsp");
+			session.setAttribute("Usuario",valordeacceso);
 		}
-		else if (valordeacceso == false){
+		else if (valordeacceso == 0){
 			System.out.println("El usuario no existe");
+			response.sendRedirect("Index.jsp");
 		}
 		else {
 			System.out.println("ERROR");
@@ -63,5 +77,7 @@ public class ControllerAcceso extends HttpServlet {
 		}
 		
 	}
+
+}
 
 }
