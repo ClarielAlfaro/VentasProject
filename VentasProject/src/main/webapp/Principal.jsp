@@ -9,6 +9,25 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 
+form{
+	
+	border-radius: 3px;
+	font-size:1.2em;
+	color: black;
+	padding: 10px;
+	margin: 0 auto;
+	width:300px;
+	}
+
+	.box{
+	width:1380px;
+	padding: 10px;
+	position: left;
+	top:60%;
+	left:50%;	
+	text-align: left;
+	}
+
 *{
 padding:0;
 margin:0;
@@ -189,14 +208,16 @@ if(usuSession.equals(null) || usuSession.equals("null") ){
 
 %>
 
-<form action="ControllerAcceso" method="post">
+<form class="box" action="ControllerAcceso" method="post">
 
-<input type="submit" name="btncerrar" value="cerrar">
+<input type="submit" name="btncerrar" value="Cerrar Sesion" class="btn btn-primary">
 
 </form>
 
+<div class="container">
+
 <table class="table table-success table-striped" id="tablaDatos">
-<thead>
+<thead class="table-light">
 
 <th>NOMBRES</th>
 <th>APELLIDOS</th>
@@ -215,7 +236,7 @@ if(usuSession.equals(null) || usuSession.equals("null") ){
 
 </table>
 
-
+</div>
 
 </body>
 </html>

@@ -234,7 +234,7 @@ if(usuSession.equals(null) || usuSession.equals("null") ){
 <input type="hidden" value=<%=Id%> name="IdProducto"  >
 
 <p>Nombre:</p>
-<input type="text" value="<%=Nombre%>" name="Producto" required pattern="[a-zA-Z]+"><br/>
+<input type="text" value="<%=Nombre%>" name="Producto" required ><br/>
 
 <p>Cantidad:</p>
 <input type="text" value="<%=Cantidad%>" name="Cantidad" required pattern="[0-9]+"><br/>

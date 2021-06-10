@@ -200,7 +200,7 @@ if(usuSession.equals(null) || usuSession.equals("null") ){
 <input type="hidden" value=<%=Id%> name="IdCargo">
 
 <p>Nombre:</p>
-<input type="text" value="<%=Nombre%>" name="Cargo" required pattern="[a-zA-Z]+"><br/>
+<input type="text" value="<%=Nombre%>" name="Cargo" required ><br/>
 
 <p>Sueldo:</p>
 <input type="text" value="<%=Sueldo%>" name="Sueldo"  required pattern="[0.0-9.0]+"><br/>

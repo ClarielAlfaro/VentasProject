@@ -215,10 +215,10 @@ if(usuSession.equals(null) || usuSession.equals("null") ){
 <input type="text" value="<%=IdC%>" name="IdC" required ><br/>
 
 <p>Nombre:</p>
-<input type="text" value="<%=Nombre%>" name="Empleado" required pattern="[a-zA-Z]+"><br/>
+<input type="text" value="<%=Nombre%>" name="Empleado" required ><br/>
 
 <p>Apellido:</p>
-<input type="text" value="<%=Apellido%>" name="Apellido" required pattern="[a-zA-Z]+"><br/>
+<input type="text" value="<%=Apellido%>" name="Apellido" required ><br/>
 
 <p>Usuario:</p>
 <input type="text" value="<%=Usuario%>" name="Usuario" required pattern="[a-zA-Z]+"><br/>

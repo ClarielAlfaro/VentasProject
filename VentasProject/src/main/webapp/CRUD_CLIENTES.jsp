@@ -205,13 +205,13 @@ if(usuSession.equals(null) || usuSession.equals("null") ){
 <input type="hidden" value=<%=Id%> name="IdCliente"  >
 
 <p>Nombre Cliente:</p>
-<input type="text" value="<%=Nombre%>" name="Cliente" required pattern="[a-zA-Z]+"> <br/>
+<input type="text" value="<%=Nombre%>" name="Cliente" required > <br/>
 
 <p>Apellido Cliente:</p>
-<input type="text" value="<%=Apellido%>" name="Apellido" required pattern="[a-zA-Z]+"> <br/>
+<input type="text" value="<%=Apellido%>" name="Apellido" required > <br/>
 
 <p>Direccion:</p>
-<input type="text" value="<%=Direccion%>" name="Direccion" required pattern="[a-zA-Z]+"> <br/>
+<input type="text" value="<%=Direccion%>" name="Direccion" required > <br/>
 
 <p>Telefono:</p>
 <input maxlength="8" minlength="8" type="text" value="<%=Telefono%>" name="Telefono" required pattern="[0-9]+"> <br/>
