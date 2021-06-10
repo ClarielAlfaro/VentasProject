@@ -110,43 +110,45 @@ margin-left:-385px;
 
 <div class="menu-bar">
 <ul>
-<li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i>  Clientes</a>
+<li class="active"><a href="#"><i class="fa fa-user" aria-hidden="true"></i>  Clientes</a>
 <div class="sub-menu-1">
 <ul>
-<li><a href="Principal.jsp" class="btn btn-success">Buscar Cliente</a></li>
-<li><a  href="CRUD_CLIENTES.jsp" class="btn btn-success">Agregar y Modificar</a></li>
-</ul>
+<li><a href="Principal.jsp" class="btn btn-success">Mostrar Clientes</a></li>
+<li><a  href="CRUD_CLIENTES.jsp" class="btn btn-success">Agregar Clientes</a></li>
+</ul> 
 </div>
 </li>
-<li><a href="#"><i class="fa fa-book" aria-hidden="true"></i>Proveedores</a>
+<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Proveedores</a>
 <div class="sub-menu-1">
 <ul>
-<li><a href="#"></a>Buscar Proveedores</li>
-<li><a href="#"></a>Agregar y Modificar</li>
+<li><a href="Listadoproveedores.jsp" class="btn btn-success">Mostrar Proveedores</a></li>
+<li><a href="CRUD_PROVEEDORES.jsp" class="btn btn-success">Agregar Proveedores</a></li>
 </ul>
 </div>
 </li>
 <li><a href="#"><i class="fa fa-book" aria-hidden="true"></i>Productos</a>
 <div class="sub-menu-1">
 <ul>
-<li><a href="#" ></a>Agregar y Modificar</li>
-<li><a href="#"></a>Categorias</li>
+<li><a href="CRUD_PRODUCTOS.jsp" class="btn btn-success">Agregar</a></li>
+<li><a href="ListaCategoria.jsp" class="btn btn-success">Categorias</a></li>
+<li><a href="CRUD_CATEGORIA.jsp" class="btn btn-success">Agregar Categorias</a></li>
 </ul>
 </div>
 </li>
 <li><a href="#"><i class="fa fa-book" aria-hidden="true"></i>Inventario</a>
 <div class="sub-menu-1">
 <ul>
-<li><a href="#"></a>Visualizar</li>
+<li><a href="Inventario.jsp" class="btn btn-success">Visualizar</a></li>
 </ul>
 </div>
 </li>
-<li><a href="#"><i class="fa fa-book" aria-hidden="true"></i>Empleados</a>
+<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Empleados</a>
 <div class="sub-menu-1">
 <ul>
-<li><a href="#"></a>Buscar Empleados</li>
-<li><a href="#"></a>Agregar y Modificar</li>
-<li><a href="#"></a>cargos</li>
+<li><a href="ListaEmpleado.jsp" class="btn btn-success">Mostrar Empleados</a></li>
+<li><a href="CRUD_EMPLEADO.jsp" class="btn btn-success">Agregar Empleado</a></li>
+<li><a href="ListaCargos.jsp" class="btn btn-success">cargos</a></li>
+<li><a href="CRUD_CARGOS.jsp" class="btn btn-success">Agregar cargo</a></li>
 </ul>
 </div>
 </li>
@@ -159,6 +161,7 @@ margin-left:-385px;
 </li>
 </ul>
 </div>
+
 
 <%
 String Id= request.getParameter("Id");

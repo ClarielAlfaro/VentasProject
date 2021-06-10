@@ -46,6 +46,12 @@
   	<description></description>
   	<servlet-class>com.clariel.Controladores.ControllerCRUDproveedor</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ControllerCRUDinventario</servlet-name>
+  	<display-name>ControllerCRUDinventario</display-name>
+  	<description></description>
+  	<servlet-class>com.clariel.Controladores.ControllerCRUDinventario</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ControllerCRUDcargos</servlet-name>
   	<url-pattern>/ControllerCRUDcargos</url-pattern>
@@ -61,5 +67,9 @@
   <servlet-mapping>
   	<servlet-name>ControllerCRUDproveedor</servlet-name>
   	<url-pattern>/ControllerCRUDproveedor</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControllerCRUDinventario</servlet-name>
+  	<url-pattern>/ControllerCRUDinventario</url-pattern>
   </servlet-mapping>
 </web-app>

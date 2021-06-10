@@ -3,8 +3,8 @@ package com.clariel.entidades;
 public class Producto {
 	
 	protected int idProducto;
-	protected int idCategoria;
-	protected int idProveedor;
+	protected int id_categoria;
+	protected int id_proveedor;
 	protected String nombre_producto;
 	protected int cantidad;
 	protected double costo;
@@ -19,19 +19,19 @@ public class Producto {
     }
     
     public int getIdCategoria() {
-        return idCategoria;
+        return id_categoria;
     }
 
     public void setIdCategoria(int id_categoria) {
-        this.idCategoria = id_categoria;
+        this.id_categoria = id_categoria;
     }
     
     public int getIdProveedor() {
-        return idProveedor;
+        return id_proveedor;
     }
 
     public void setIdProveedor(int id_proveedor) {
-        this.idProveedor = id_proveedor;
+        this.id_proveedor = id_proveedor;
     }
     
     public String getNombre_Producto() {

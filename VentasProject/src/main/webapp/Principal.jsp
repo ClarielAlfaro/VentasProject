@@ -16,9 +16,7 @@ box-sizing: border-box;
 }
 
 body{
-background-image: url(C:\Users\alfar\Desktop\menu bar\background.jpg);
-background-size: cover;
-background-position: center;
+background-color:#b0e0e6; 
 font-family: sans-serif;
 }
 
@@ -37,6 +35,7 @@ color: #fff;
 width:200px;
 margin:15px;
 padding:15px;
+z-index:1;
 }
 
 .menu-bar ul li a{
@@ -130,7 +129,7 @@ $(document).ready(function(){
 <ul>
 <li><a href="Principal.jsp" class="btn btn-success">Mostrar Clientes</a></li>
 <li><a  href="CRUD_CLIENTES.jsp" class="btn btn-success">Agregar Clientes</a></li>
-</ul>
+</ul> 
 </div>
 </li>
 <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Proveedores</a>
@@ -144,7 +143,7 @@ $(document).ready(function(){
 <li><a href="#"><i class="fa fa-book" aria-hidden="true"></i>Productos</a>
 <div class="sub-menu-1">
 <ul>
-<li><a href="#" ></a>Agregar</li>
+<li><a href="CRUD_PRODUCTOS.jsp" class="btn btn-success">Agregar</a></li>
 <li><a href="ListaCategoria.jsp" class="btn btn-success">Categorias</a></li>
 <li><a href="CRUD_CATEGORIA.jsp" class="btn btn-success">Agregar Categorias</a></li>
 </ul>
@@ -153,7 +152,7 @@ $(document).ready(function(){
 <li><a href="#"><i class="fa fa-book" aria-hidden="true"></i>Inventario</a>
 <div class="sub-menu-1">
 <ul>
-<li><a href="#"></a>Visualizar</li>
+<li><a href="Inventario.jsp" class="btn btn-success">Visualizar</a></li>
 </ul>
 </div>
 </li>
